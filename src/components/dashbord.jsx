@@ -25,7 +25,7 @@ const Dashbord = () => {
                             {/* <!-- End of Topbar --> */}
 
                             {/* <!-- Begin Page Content --> */}
-                            <div class="container-fluid" style={{width:"85%",marginLeft:"222px",marginTop:"86px"}}>
+                            <div class="container" style={{width:"100%",marginLeft:"222px",marginRight:"100px",marginTop:"86px"}}>
 
                                 {/* <!-- Page Heading --> */}
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
