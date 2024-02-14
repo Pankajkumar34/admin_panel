@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
+import { Delete } from '@mui/icons-material';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "blue",
@@ -20,6 +21,13 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledEditCell = styled(StyledTableCell)({
+  padding:  0,
+  width: '10%', // Adjust the width as needed
+  '&:hover': {
+    backgroundColor: 'transparent',
+  },
+});
+const StyledDeleteCell = styled(StyledTableCell)({
   padding:  0,
   width: '10%', // Adjust the width as needed
   '&:hover': {
@@ -84,7 +92,13 @@ export default function CustomizedTables() {
                 <img src={row.imageUrl} alt={row.name} style={{ width: '50px', height: '50px' }} />
               </StyledTableCell>
               <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledDeleteCell align="right">
+                <IconButton aria-label="delete"
+                  onClick={() => handleEditClick(row)}
+                >
+                  <Delete />
+                </IconButton>
+              </StyledDeleteCell>
               <StyledEditCell align="right">
                 <IconButton aria-label="edit"
                   onClick={() => handleEditClick(row)}
