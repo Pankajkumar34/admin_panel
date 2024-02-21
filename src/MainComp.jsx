@@ -1,17 +1,18 @@
 import React from "react";
-import Sidebar from "../sideBar";
-import Topbar from "../topBar";
+import Sidebar from './sideBar'
+import Topbar from "./topBar";
 import Button from '@mui/material/Button';
-import CustomizedTables from "./tables";
-const Dashbord = () => {
+import CustomizedTables from "./components/tables";
+import { Outlet, useNavigate } from "react-router-dom";
+const MainComp = () => {
+    // const router=useNavigate()
+
     return (
         <>
             <body id="page-top">
 
                 {/* <!-- Page Wrapper --> */}
                 <div id="wrapper">
-
-
                     {/* <!-- End of Sidebar --> */}
                     <Sidebar />
                     {/* <!-- Content Wrapper --> */}
@@ -37,7 +38,7 @@ const Dashbord = () => {
                                 </div>
 
                                 {/* <!-- Content Row --> */}
-                              <CustomizedTables/>
+                              <Outlet/>
 
                                 {/* <!-- Content Row --> */}
 
@@ -98,4 +99,4 @@ const Dashbord = () => {
     )
 }
 
-export default Dashbord;
+export default MainComp;
